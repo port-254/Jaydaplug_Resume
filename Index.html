@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Resume | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F19;
+        }
+        .mono {
+            font-family: 'Geist Mono', monospace;
+        }
+        
+        /* Two-Color Theme Accents */
+        .text-accent { color: #00FF66; } /* Matrix/Cyber Green */
+        .bg-accent { background-color: #00FF66; }
+        .border-accent { border-color: #00FF66; }
+        .shadow-accent { box-shadow: 0 0 15px rgba(0, 255, 102, 0.2); }
+
+        /* Custom Animation Delays */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        /* Pure CSS Glitch Effect */
+        .glitch {
+            position: relative;
+            color: #FFFFFF;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0B0F19;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #00fff0, 0 1px #00fff0;
+            clip: rect(85px, 450px, 140px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(15px, 9999px, 66px, 0); }
+            10% { clip: rect(34px, 9999px, 55px, 0); }
+            20% { clip: rect(81px, 9999px, 19px, 0); }
+            30% { clip: rect(43px, 9999px, 88px, 0); }
+            40% { clip: rect(12px, 9999px, 64px, 0); }
+            50% { clip: rect(92px, 9999px, 13px, 0); }
+            60% { clip: rect(60px, 9999px, 78px, 0); }
+            70% { clip: rect(47px, 9999px, 32px, 0); }
+            80% { clip: rect(15px, 9999px, 91px, 0); }
+            90% { clip: rect(83px, 9999px, 57px, 0); }
+            100% { clip: rect(2px, 9999px, 41px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            11% { clip: rect(91px, 9999px, 21px, 0); }
+            22% { clip: rect(4px, 9999px, 65px, 0); }
+            33% { clip: rect(78px, 9999px, 93px, 0); }
+            44% { clip: rect(21px, 9999px, 44px, 0); }
+            55% { clip: rect(53px, 9999px, 88px, 0); }
+            66% { clip: rect(12px, 9999px, 32px, 0); }
+            77% { clip: rect(89px, 9999px, 98px, 0); }
+            88% { clip: rect(34px, 9999px, 12px, 0); }
+            100% { clip: rect(61px, 9999px, 76px, 0); }
+        }
+    </style>
+</head>
+<body class="text-slate-300 min-h-screen selection:bg-emerald-500 selection:text-black antialiased p-4 md:p-12">
+
+    <div class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- HEADER SECTION (Animated Fade In) -->
+        <header class="animate-fade-in-down duration-700 border-b border-slate-800 pb-8 space-y-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white glitch" data-text="YOUR NAME">
+                        YOUR NAME
+                    </h1>
+                    <p class="mono text-accent text-sm tracking-widest uppercase mt-2">
+                        <i class="fa-solid ref fa-terminal mr-2"></i>Infrastructure & Systems Engineer
+                    </p>
+                </div>
+                <div class="mono text-xs md:text-sm text-slate-400 space-y-1.5 md:text-right bg-slate-900/50 p-4 rounded-lg border border-slate-800 w-full md:w-auto">
+                    <div><i class="fa-solid fa-location-dot text-accent mr-2"></i>Nairobi, Kenya</div>
+                    <div><i class="fa-solid fa-envelope text-accent mr-2"></i>your.email@email.com</div>
+                    <div><i class="fa-solid fa-phone text-accent mr-2"></i>+254 7XX XXX XXX</div>
+                    <div class="pt-2 flex gap-4 md:justify-end text-slate-300 text-base">
+                        <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PROFILE SUMMARY (Delayed Fade In) -->
+        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-100 bg-slate-900/30 p-6 rounded-xl border border-slate-800 shadow-accent">
+            <h2 class="mono text-white font-bold text-lg mb-3 flex items-center gap-2">
+                <span class="text-accent">&gt;_</span> Professional Profile
+            </h2>
+            <p class="leading-relaxed text-slate-400">
+                Highly resourceful IT & Network Technician with a track record of deploying robust network topologies, managing physical infrastructure installations under tight constraints, and securing systems. Translating deep operational resilience and rapid problem-solving from a demanding high-velocity culinary background into enterprise IT infrastructure management.
+            </p>
+        </section>
+
+        <!-- SKILLS MATRIX -->
+        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-200 space-y-4">
+            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
+                <span class="text-accent">&gt;_</span> Core Engine / Skills Matrix
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
+                    <div class="text-accent mb-3"><i class="fa-solid fa-network-wired text-xl"></i></div>
+                    <h3 class="text-white font-semibold mb-2">Networking & Infra</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Spine-Leaf Topologies, VLAN Segmentation, DHCP/NAT, TP-Link Omada Ecosystem, Managed PoE Switches, Structured Cabling.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
+                    <div class="text-accent mb-3"><i class="fa-solid fa-shield-halved text-xl"></i></div>
+                    <h3 class="text-white font-semibold mb-2">Cybersecurity & Labs</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">OWASP Top 10, SQLi & SSRF Audit Methodologies, Firewall Hardening, Ubuntu WSL Security Environments.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
+                    <div class="text-accent mb-3"><i class="fa-solid fa-code text-xl"></i></div>
+                    <h3 class="text-white font-semibold mb-2">Web Architecture</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Full-Stack Development utilizing React, Svelte, Tailwind CSS, and lightweight high-performance FastAPI backends.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE IMPLEMENTATIONS & PROJECTS -->
+        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-300 space-y-6">
+            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
+                <span class="text-accent">&gt;_</span> Production Implementations
+            </h2>
+
+            <div class="space-y-8 border-l border-slate-800 pl-6 ml-2">
+                
+                <!-- Project 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1 bg-[#0B0F19] border border-slate-700 text-accent rounded-full w-4 h-4 flex items-center justify-center group-hover:border-accent transition-colors"></div>
+                    <div class="flex justify-between items-start flex-col sm:flex-row gap-1 mb-2">
+                        <h3 class="text-white font-bold text-lg group-hover:text-accent transition-colors">Commercial Facility Network & CCTV Overhaul</h3>
+                        <span class="mono text-xs bg-slate-900 px-2.5 py-1 rounded text-slate-400 border border-slate-800">June 2026</span>
+                    </div>
+                    <p class="text-xs mono text-accent tracking-wider mb-3">Role: Lead Infrastructure Contractor</p>
+                    <ul class="text-sm text-slate-400 space-y-2 list-none">
+                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Architected and deployed a multi-zone network topology using managed switches and access points to isolate operations from guest traffic.</li>
+                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Implemented an 8-channel NVR system with custom hardware concealment pipelines to meet strict aesthetic and monitoring criteria.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1 bg-[#0B0F19] border border-slate-700 text-accent rounded-full w-4 h-4 flex items-center justify-center group-hover:border-accent transition-colors"></div>
+                    <div class="flex justify-between items-start flex-col sm:flex-row gap-1 mb-2">
+                        <h3 class="text-white font-bold text-lg group-hover:text-accent transition-colors">Full-Stack Asset Management System</h3>
+                        <span class="mono text-xs bg-slate-900 px-2.5 py-1 rounded text-slate-400 border border-slate-800">Independent Lab</span>
+                    </div>
+                    <p class="text-xs mono text-accent tracking-wider mb-3">Stack: FastAPI, React, Tailwind CSS, WSL</p>
+                    <ul class="text-sm text-slate-400 space-y-2 list-none">
+                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Engineered an asynchronous internal hardware tracking utility to monitor deployment mapping and switch ports configurations.</li>
+                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Managed cross-layer debugging environments using virtualized network adapters inside specialized Linux Subsystems.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE HISTORY -->
+        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-400 space-y-6">
+            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
+                <span class="text-accent">&gt;_</span> Operational History
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-900/30 p-5 rounded-lg border border-slate-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-white font-semibold">Freelance Technical Contractor</h3>
+                        <span class="text-xs mono text-slate-500">2025 - Present</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Providing on-demand hardware diagnostics, specialized structured cabling, security audits, and localized ecosystem administration for diverse environments.</p>
+                </div>
+
+                <div class="bg-slate-900/30 p-5 rounded-lg border border-slate-800">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-white font-semibold">Kitchen Operations Specialist</h3>
+                        <span class="text-xs mono text-slate-500">2023 - 2025</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Built intense stress tolerance, resource management, and execution precision in high-velocity professional culinary teams. Directly applicable to technical crisis mitigation.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Inject custom entry animations directly since we are using plain Tailwind CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(8px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
