@@ -1,241 +1,335 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Resume | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+    <title>Ankara Resorts Smart TV Menu</title>
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B0F19;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .mono {
-            font-family: 'Geist Mono', monospace;
+        .font-serif-menu {
+            font-family: 'Playfair Display', serif;
         }
         
-        /* Two-Color Theme Accents */
-        .text-accent { color: #00FF66; } /* Matrix/Cyber Green */
-        .bg-accent { background-color: #00FF66; }
-        .border-accent { border-color: #00FF66; }
-        .shadow-accent { box-shadow: 0 0 15px rgba(0, 255, 102, 0.2); }
+        /* Smooth, ultra-crisp CSS scaling for 75" TV hardware */
+        @media (min-width: 1920px) {
+            html { font-size: 22px; }
+        }
+        @media (min-width: 3840px) {
+            html { font-size: 42px; }
+        }
 
-        /* Custom Animation Delays */
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-400 { animation-delay: 400ms; }
-        .delay-500 { animation-delay: 500ms; }
-
-        /* Pure CSS Glitch Effect */
-        .glitch {
-            position: relative;
-            color: #FFFFFF;
+        /* Custom Keyframes for interactive elements */
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.9; box-shadow: 0 0 0px rgba(201, 125, 76, 0); }
+            50% { transform: scale(1.02); opacity: 1; box-shadow: 0 0 20px rgba(201, 125, 76, 0.4); }
         }
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0B0F19;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -1px 0 #ff00c1;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -1px 0 #00fff0, 0 1px #00fff0;
-            clip: rect(85px, 450px, 140px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-anim {
-            0% { clip: rect(15px, 9999px, 66px, 0); }
-            10% { clip: rect(34px, 9999px, 55px, 0); }
-            20% { clip: rect(81px, 9999px, 19px, 0); }
-            30% { clip: rect(43px, 9999px, 88px, 0); }
-            40% { clip: rect(12px, 9999px, 64px, 0); }
-            50% { clip: rect(92px, 9999px, 13px, 0); }
-            60% { clip: rect(60px, 9999px, 78px, 0); }
-            70% { clip: rect(47px, 9999px, 32px, 0); }
-            80% { clip: rect(15px, 9999px, 91px, 0); }
-            90% { clip: rect(83px, 9999px, 57px, 0); }
-            100% { clip: rect(2px, 9999px, 41px, 0); }
-        }
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 100px, 0); }
-            11% { clip: rect(91px, 9999px, 21px, 0); }
-            22% { clip: rect(4px, 9999px, 65px, 0); }
-            33% { clip: rect(78px, 9999px, 93px, 0); }
-            44% { clip: rect(21px, 9999px, 44px, 0); }
-            55% { clip: rect(53px, 9999px, 88px, 0); }
-            66% { clip: rect(12px, 9999px, 32px, 0); }
-            77% { clip: rect(89px, 9999px, 98px, 0); }
-            88% { clip: rect(34px, 9999px, 12px, 0); }
-            100% { clip: rect(61px, 9999px, 76px, 0); }
+        .event-glow {
+            animation: pulse-glow 3s infinite ease-in-out;
         }
     </style>
 </head>
-<body class="text-slate-300 min-h-screen selection:bg-emerald-500 selection:text-black antialiased p-4 md:p-12">
+<body class="bg-[#130b08] text-[#f4eae1] h-screen w-screen overflow-hidden flex flex-col antialiased select-none">
 
-    <div class="max-w-4xl mx-auto space-y-12">
+    <!-- Header / Brand Bar -->
+    <header class="bg-[#24150e] border-b-2 border-[#c97d4c] px-8 py-4 flex justify-between items-center shrink-0 shadow-xl z-10">
+        <div>
+            <h1 class="font-serif-menu text-4xl font-bold tracking-wide text-white flex items-center gap-3">
+                Ankara Resorts 
+                <span class="text-xs font-sans font-black tracking-widest bg-red-600 text-white px-2 py-0.5 rounded animate-pulse">LIVE SCREEN</span>
+            </h1>
+            <p class="font-serif-menu italic text-sm text-[#c97d4c] tracking-wider uppercase">Gourmet Experience</p>
+        </div>
         
-        <!-- HEADER SECTION (Animated Fade In) -->
-        <header class="animate-fade-in-down duration-700 border-b border-slate-800 pb-8 space-y-4">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white glitch" data-text="YOUR NAME">
-                        YOUR NAME
-                    </h1>
-                    <p class="mono text-accent text-sm tracking-widest uppercase mt-2">
-                        <i class="fa-solid ref fa-terminal mr-2"></i>Infrastructure & Systems Engineer
-                    </p>
-                </div>
-                <div class="mono text-xs md:text-sm text-slate-400 space-y-1.5 md:text-right bg-slate-900/50 p-4 rounded-lg border border-slate-800 w-full md:w-auto">
-                    <div><i class="fa-solid fa-location-dot text-accent mr-2"></i>Nairobi, Kenya</div>
-                    <div><i class="fa-solid fa-envelope text-accent mr-2"></i>your.email@email.com</div>
-                    <div><i class="fa-solid fa-phone text-accent mr-2"></i>+254 7XX XXX XXX</div>
-                    <div class="pt-2 flex gap-4 md:justify-end text-slate-300 text-base">
-                        <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!-- Live View Toggle Banner -->
+        <div id="view-status" class="text-xs font-bold tracking-widest text-[#f4eae1] bg-[#3a2216] px-5 py-2 rounded-lg border border-[#523221] transition-all duration-500">
+            Auto-Cycling Menu (15s)
+        </div>
+    </header>
 
-        <!-- PROFILE SUMMARY (Delayed Fade In) -->
-        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-100 bg-slate-900/30 p-6 rounded-xl border border-slate-800 shadow-accent">
-            <h2 class="mono text-white font-bold text-lg mb-3 flex items-center gap-2">
-                <span class="text-accent">&gt;_</span> Professional Profile
-            </h2>
-            <p class="leading-relaxed text-slate-400">
-                Highly resourceful IT & Network Technician with a track record of deploying robust network topologies, managing physical infrastructure installations under tight constraints, and securing systems. Translating deep operational resilience and rapid problem-solving from a demanding high-velocity culinary background into enterprise IT infrastructure management.
-            </p>
-        </section>
-
-        <!-- SKILLS MATRIX -->
-        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-200 space-y-4">
-            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
-                <span class="text-accent">&gt;_</span> Core Engine / Skills Matrix
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="text-accent mb-3"><i class="fa-solid fa-network-wired text-xl"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Networking & Infra</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Spine-Leaf Topologies, VLAN Segmentation, DHCP/NAT, TP-Link Omada Ecosystem, Managed PoE Switches, Structured Cabling.</p>
-                </div>
-                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="text-accent mb-3"><i class="fa-solid fa-shield-halved text-xl"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Cybersecurity & Labs</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">OWASP Top 10, SQLi & SSRF Audit Methodologies, Firewall Hardening, Ubuntu WSL Security Environments.</p>
-                </div>
-                <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="text-accent mb-3"><i class="fa-solid fa-code text-xl"></i></div>
-                    <h3 class="text-white font-semibold mb-2">Web Architecture</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Full-Stack Development utilizing React, Svelte, Tailwind CSS, and lightweight high-performance FastAPI backends.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CORE IMPLEMENTATIONS & PROJECTS -->
-        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-300 space-y-6">
-            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
-                <span class="text-accent">&gt;_</span> Production Implementations
-            </h2>
-
-            <div class="space-y-8 border-l border-slate-800 pl-6 ml-2">
-                
-                <!-- Project 1 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] top-1 bg-[#0B0F19] border border-slate-700 text-accent rounded-full w-4 h-4 flex items-center justify-center group-hover:border-accent transition-colors"></div>
-                    <div class="flex justify-between items-start flex-col sm:flex-row gap-1 mb-2">
-                        <h3 class="text-white font-bold text-lg group-hover:text-accent transition-colors">Commercial Facility Network & CCTV Overhaul</h3>
-                        <span class="mono text-xs bg-slate-900 px-2.5 py-1 rounded text-slate-400 border border-slate-800">June 2026</span>
-                    </div>
-                    <p class="text-xs mono text-accent tracking-wider mb-3">Role: Lead Infrastructure Contractor</p>
-                    <ul class="text-sm text-slate-400 space-y-2 list-none">
-                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Architected and deployed a multi-zone network topology using managed switches and access points to isolate operations from guest traffic.</li>
-                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Implemented an 8-channel NVR system with custom hardware concealment pipelines to meet strict aesthetic and monitoring criteria.</li>
-                    </ul>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] top-1 bg-[#0B0F19] border border-slate-700 text-accent rounded-full w-4 h-4 flex items-center justify-center group-hover:border-accent transition-colors"></div>
-                    <div class="flex justify-between items-start flex-col sm:flex-row gap-1 mb-2">
-                        <h3 class="text-white font-bold text-lg group-hover:text-accent transition-colors">Full-Stack Asset Management System</h3>
-                        <span class="mono text-xs bg-slate-900 px-2.5 py-1 rounded text-slate-400 border border-slate-800">Independent Lab</span>
-                    </div>
-                    <p class="text-xs mono text-accent tracking-wider mb-3">Stack: FastAPI, React, Tailwind CSS, WSL</p>
-                    <ul class="text-sm text-slate-400 space-y-2 list-none">
-                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Engineered an asynchronous internal hardware tracking utility to monitor deployment mapping and switch ports configurations.</li>
-                        <li><i class="fa-solid fa-caret-right text-accent mr-2"></i>Managed cross-layer debugging environments using virtualized network adapters inside specialized Linux Subsystems.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- EXPERIENCE HISTORY -->
-        <section class="opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] delay-400 space-y-6">
-            <h2 class="mono text-white font-bold text-lg flex items-center gap-2">
-                <span class="text-accent">&gt;_</span> Operational History
-            </h2>
+    <!-- MAIN INTERACTIVE HUB -->
+    <main class="flex-1 relative min-h-0 w-full overflow-hidden">
+        
+        <!-- ================= PAGE 1: THE FULL MENU ================= -->
+        <div id="page-menu" class="absolute inset-0 grid grid-cols-12 gap-5 p-5 transition-all duration-1000 transform opacity-100 scale-100 z-10">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/30 p-5 rounded-lg border border-slate-800">
-                    <div class="flex justify-between items-center mb-2">
-                        <h3 class="text-white font-semibold">Freelance Technical Contractor</h3>
-                        <span class="text-xs mono text-slate-500">2025 - Present</span>
+            <!-- COL 1: Platters & Bitings -->
+            <div class="col-span-3 flex flex-col gap-4 min-h-0">
+                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] flex-1 flex flex-col min-h-0 shadow-lg">
+                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-3">Shareable Platters</h2>
+                    <div class="flex-1 grid grid-cols-2 gap-2.5 content-center">
+                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 2 & 4', 'Perfect for date nights or pairs sharing. Featuring selection of Kuku Choma, Pork, and traditional sides cut down right to precision.')">
+                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
+                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">2 / 4</span>
+                        </div>
+                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 6 & 8', 'Family sized combo containing mixed options of Goat Choma, Pork Ribs, Samosas, and fluffy Chapatis.')">
+                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
+                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">6 / 8</span>
+                        </div>
+                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 10 & 12', 'The Crew Ultimate option. Prepped by top chefs containing optimal cuts of all our signature specialty wet and dry meats.')">
+                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
+                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">10 / 12</span>
+                        </div>
+                        <div class="bg-[#c97d4c]/10 p-3 rounded-lg border-2 border-[#c97d4c] text-center hover:bg-[#c97d4c]/20 cursor-pointer transition col-span-2" onclick="showQuickModal('The Grand Platter for 20', 'Massive resort celebration arrangement! Includes custom selections of Kuku, Mbuzi Choma, Pork Ribs, Chapatis, Kebabs, and Sausages served across custom board layout.')">
+                            <span class="block text-xs uppercase tracking-widest text-[#c97d4c] font-black">Grand Feast for</span>
+                            <span class="block font-serif-menu text-3xl font-black text-white">20 People</span>
+                        </div>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">Providing on-demand hardware diagnostics, specialized structured cabling, security audits, and localized ecosystem administration for diverse environments.</p>
                 </div>
 
-                <div class="bg-slate-900/30 p-5 rounded-lg border border-slate-800">
-                    <div class="flex justify-between items-center mb-2">
-                        <h3 class="text-white font-semibold">Kitchen Operations Specialist</h3>
-                        <span class="text-xs mono text-slate-500">2023 - 2025</span>
+                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] shrink-0 shadow-lg">
+                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-3">Bitings & Sides</h2>
+                    <div class="grid grid-cols-2 gap-2 text-center text-sm font-semibold">
+                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Samosas', 'Golden, ultra-crispy handcrafted pastry triangles packed with spiced signature minced meat fill.')">Samosa</div>
+                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Chapati', 'Classic soft, layered, flaky East African flatbread rolled out dynamically all day.')">Chapati</div>
+                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Choma Sausage', 'Local style char-grilled giant sausages with a perfect signature outer snap.')">Choma Sausage</div>
+                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Kebab', 'Perfectly seasoned spiced minced meat logs, skewered and shallow-fried to perfection.')">Kebab</div>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">Built intense stress tolerance, resource management, and execution precision in high-velocity professional culinary teams. Directly applicable to technical crisis mitigation.</p>
                 </div>
             </div>
-        </section>
 
+            <!-- COL 2: Poultry, Beef & Goat Mains -->
+            <div class="col-span-5 bg-[#1c100a] p-5 rounded-xl border border-[#362015] flex flex-col min-h-0 shadow-lg">
+                <h2 class="font-serif-menu text-2xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-4 flex justify-between items-center">
+                    <span>Main Kitchen Selections</span>
+                    <span class="text-xs font-sans tracking-widest text-gray-400 bg-[#24150e] px-3 py-1 rounded-full uppercase">Choma & Fry</span>
+                </h2>
+                <div class="flex-1 flex flex-col justify-between min-h-0 gap-y-4">
+                    <div>
+                        <h3 class="text-xs font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#24150e] px-2 py-1 inline-block rounded">Poultry (Kuku)</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Choma', 'Local kuku open-flame charcoal roasted for absolute smoky flavor profiles.')"><span class="font-bold text-white text-base">Kuku Choma</span><span class="text-xs text-[#c97d4c] italic">Flame Charred</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Wet Fry', 'Juicy cuts stewed deeply in rich local tomatoes, bell peppers, and home style spices.')"><span class="font-bold text-white text-base">Kuku Wet Fry</span><span class="text-xs text-[#c97d4c] italic">Rich Savory Gravy</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Dry Fry', 'High-heat pan seared chicken tossed cleanly with sweet red onions and coriander.')"><span class="font-bold text-white text-base">Kuku Dry Fry</span><span class="text-xs text-[#c97d4c] italic">Caramelized Crunch</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#24150e] px-2 py-1 inline-block rounded">Beef & Mbuzi (Goat)</h3>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Beef Wet / Dry', 'Premium beef chuck chunks customized straight into heavy local glaze sauce or dry wok tossed.')"><span class="font-bold text-white text-base">Beef (Wet / Dry Fry)</span><span class="text-xs text-gray-400">Chef Special</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Choma', 'Authentic choice cuts of local goat slow-roasted over real charcoal wood beds.')"><span class="font-bold text-white text-base">Goat Choma (Mbuzi)</span><span class="text-xs text-[#c97d4c] italic">Traditional Best</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Wet Fry', 'Rich goat ribs or shoulder chunks pan simmered cleanly inside sweet onion thick soup.')"><span class="font-bold text-white text-base">Goat Wet Fry</span><span class="text-xs text-gray-400">Tender Gravy</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Dry Fry', 'Wok-charred goat pieces infused with local ginger, garlic, and heavy bullet chilis.')"><span class="font-bold text-white text-base">Goat Dry Fry</span><span class="text-xs text-gray-400">Spicy Kick Available</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Chops', 'Tender lion chops hit high on flat top grills to seal up pure premium flavor juices.')"><span class="font-bold text-white text-base">Goat Chops</span><span class="text-xs text-gray-400">Searing Grilled</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 3: Pork Specialties & Liquids -->
+            <div class="col-span-4 flex flex-col gap-4 min-h-0">
+                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] shrink-0 shadow-lg">
+                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-2">Pork Specialties</h2>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Choma', 'Smoky flame-licked pork pieces chopped thin.')">Pork Choma</div>
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Wet Fry', 'Simmered in local rich sauce layout.')">Pork Wet Fry</div>
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Dry Fry', 'Crisp fried on heavy onions and peppers.')">Pork Dry Fry</div>
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Chops', 'Tender grilled center loin pork steaks.')">Pork Chops</div>
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Glazed Pork', 'Sticky-sweet honey barbecue soy house reduction.')">Glazed Pork</div>
+                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Ribs', 'Fall-off-bone style spare ribs marinated deep.')">Pork Ribs</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] flex-1 flex flex-col min-h-0 shadow-lg">
+                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-2">Bar & Refreshments</h2>
+                    <div class="flex-1 flex flex-col justify-between text-xs gap-y-2">
+                        <div>
+                            <span class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Thick Milkshakes</span>
+                            <div class="grid grid-cols-4 gap-1 text-center font-bold">
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Vanilla</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Strawb'y</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Choc</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Blueb'y</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Blended Juices</span>
+                            <div class="grid grid-cols-4 gap-1 text-center font-bold">
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Pineapple</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Mango</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Orange</span>
+                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Melon</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#362015]">
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase block">Smoothie</span>
+                                <span class="font-bold text-white text-sm">Avocado Smoothie</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase block">Cocktails</span>
+                                <span class="font-bold text-white text-sm">Signature Mixes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: DJ LYTA GIG EVENT FEATURE ================= -->
+        <div id="page-event" class="absolute inset-0 p-8 flex hidden justify-center items-center transition-all duration-1000 transform opacity-0 scale-95 z-10">
+            <div class="bg-[#200c05] w-full h-full rounded-2xl border-4 border-red-600 flex overflow-hidden shadow-2xl relative event-glow">
+                
+                <!-- Left Banner Graphic Style -->
+                <div class="w-1/2 bg-gradient-to-br from-red-700 via-orange-800 to-[#130b08] p-12 flex flex-col justify-between relative">
+                    <div class="absolute top-4 left-4 bg-black text-red-500 font-mono font-black text-xs px-3 py-1 uppercase tracking-widest rounded">
+                        Tomorrow Night
+                    </div>
+                    <div class="space-y-4 my-auto">
+                        <span class="text-[#f4eae1] font-bold text-xl tracking-widest uppercase block">Ankara Resorts Presents</span>
+                        <h2 class="font-serif-menu text-7xl font-black text-white leading-none tracking-tight">PARK &<br><span class="text-yellow-400">CHILL</span></h2>
+                        <div class="h-2 w-24 bg-red-600 rounded"></div>
+                        <p class="text-xl text-gray-200 font-medium">Experience the absolute peak of local nightlife fusion. Ultimate audio system setups paired perfectly with Ankara premium biting platters.</p>
+                    </div>
+                    <div class="text-sm font-bold text-gray-400 uppercase tracking-widest">
+                        Gates open 2:00 PM Till Late
+                    </div>
+                </div>
+
+                <!-- Right Side Artist Profile Information -->
+                <div class="w-1/2 bg-[#170904] p-12 flex flex-col justify-between border-l-2 border-red-900/40">
+                    <div class="text-right">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Headlining Act</span>
+                    </div>
+                    <div class="my-auto text-center space-y-6">
+                        <span class="text-xs font-black bg-yellow-400 text-black px-4 py-1.5 rounded-full uppercase tracking-widest inline-block">The Mixmaster Mastermind</span>
+                        <h3 class="font-serif-menu text-8xl font-black tracking-wide text-white drop-shadow-md">DJ LYTA</h3>
+                        <p class="text-lg text-red-400 font-bold max-w-md mx-auto">Dropping the hottest street riddims, afrobeat throwbacks, and exclusive dancehall mixes live from the deck console.</p>
+                    </div>
+                    <div class="bg-[#241109] p-4 rounded-xl border border-red-900/30 text-center">
+                        <span class="text-xs block text-gray-400 uppercase tracking-wider">Special Offer Running</span>
+                        <p class="text-base font-bold text-white">Order Any Platter for 4+ Get Complementary Choma Sausages!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- LIVE MARQUEE FOOTER BAR -->
+    <footer class="bg-[#1a0f0a] border-t border-[#311c12] shrink-0 h-14 flex items-center overflow-hidden z-20 relative">
+        <!-- Static Label Fixed to Left Side -->
+        <div class="bg-red-600 text-white font-black text-xs px-6 h-full flex items-center uppercase tracking-widest shadow-lg z-30 shrink-0">
+            HAPPENING TOMORROW
+        </div>
+        <!-- Infinite Scrolling CSS Marquee Wrapper -->
+        <div class="flex-1 overflow-hidden relative flex items-center bg-[#130b08]">
+            <marquee class="font-serif-menu text-lg md:text-xl text-[#f4eae1] font-bold" scrollamount="7" behavior="scroll" direction="left">
+                🔥 PARK & CHILL EVENT TOMORROW LIVE AT ANKARA RESORTS! 🎧 HEADLINING MIXES BY THE LEGENDARY <span class="text-yellow-400 font-black underline">DJ LYTA</span> 🍖 DRINK PROMOTIONS, PLENTY OF MBUZI CHOMA, EXOTIC COCKTAILS, AND PLATTERS READY FOR INDOOR & OUTDOOR PARKING CHILL VIBES! BRING THE CREW OUT EARLY! 🔥
+            </marquee>
+        </div>
+    </footer>
+
+    <!-- DYNAMIC SMART DISPLAY POPUP MODAL -->
+    <div id="quick-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
+        <div class="bg-[#281710] border-2 border-[#c97d4c] w-[600px] p-8 rounded-2xl shadow-2xl transform scale-95 transition-all duration-300 relative">
+            <button onclick="closeQuickModal()" class="absolute top-4 right-4 bg-[#1a0f0a] border border-[#44281b] w-10 h-10 rounded-full flex items-center justify-center font-bold text-[#c97d4c] hover:text-white transition">✕</button>
+            <span class="text-[10px] uppercase tracking-widest text-[#c97d4c] font-bold block mb-1">Ankara Resort Item Detail</span>
+            <h3 id="modal-title" class="font-serif-menu text-3xl font-bold text-white mb-4">Item Name</h3>
+            <p id="modal-desc" class="text-gray-300 text-base leading-relaxed mb-6">Detailed text regarding flavor metrics or ingredient profiles.</p>
+            <div class="bg-[#1a0f0a] p-3 rounded-lg text-xs text-center font-mono text-gray-400 border border-[#3e2519]">
+                Interactive Smart TV Menu Feature • Auto-resumes in 10s
+            </div>
+        </div>
     </div>
 
-    <!-- Inject custom entry animations directly since we are using plain Tailwind CDN -->
+    <!-- AUTO-CYCLE AND LOGIC CONTROLLER SCRIPT -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(8px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
-                    }
-                }
+        const pageMenu = document.getElementById('page-menu');
+        const pageEvent = document.getElementById('page-event');
+        const viewStatus = document.getElementById('view-status');
+        const quickModal = document.getElementById('quick-modal');
+        
+        let currentScreen = 'menu'; // menu | event
+        let cycleInterval;
+        let resumeTimeout;
+
+        // Function to run smooth transitions between pages
+        function switchScreen(target) {
+            if (target === 'event') {
+                // Fade out Menu
+                pageMenu.classList.remove('opacity-100', 'scale-100');
+                pageMenu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    pageMenu.classList.add('hidden');
+                    pageEvent.classList.remove('hidden');
+                    // Fade in Event Showcase
+                    setTimeout(() => {
+                        pageEvent.classList.remove('opacity-0', 'scale-95');
+                        pageEvent.classList.add('opacity-100', 'scale-100');
+                        currentScreen = 'event';
+                        viewStatus.innerText = "Showing Event Special";
+                        viewStatus.className = "text-xs font-bold tracking-widest text-white bg-red-800 px-5 py-2 rounded-lg border border-red-600 animate-pulse";
+                    }, 50);
+                }, 1000);
+            } else {
+                // Fade out Event Showcase
+                pageEvent.classList.remove('opacity-100', 'scale-100');
+                pageEvent.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    pageEvent.classList.add('hidden');
+                    pageMenu.classList.remove('hidden');
+                    // Fade in Full Menu
+                    setTimeout(() => {
+                        pageMenu.classList.remove('opacity-0', 'scale-95');
+                        pageMenu.classList.add('opacity-100', 'scale-100');
+                        currentScreen = 'menu';
+                        viewStatus.innerText = "Auto-Cycling Menu (15s)";
+                        viewStatus.className = "text-xs font-bold tracking-widest text-[#f4eae1] bg-[#3a2216] px-5 py-2 rounded-lg border border-[#523221]";
+                    }, 50);
+                }, 1000);
             }
         }
+
+        // Trigger automatic 15 seconds screen loops
+        function startAutoCycle() {
+            clearInterval(cycleInterval);
+            cycleInterval = setInterval(() => {
+                if (currentScreen === 'menu') {
+                    switchScreen('event');
+                } else {
+                    switchScreen('menu');
+                }
+            }, 15000); // 15 Seconds Time Trigger
+        }
+
+        // Display pop up descriptions instantly on click
+        function showQuickModal(title, description) {
+            clearInterval(cycleInterval); // Halt background movement while user looks
+            clearTimeout(resumeTimeout);
+
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            
+            // Render Animations classes
+            quickModal.classList.remove('opacity-0', 'pointer-events-none');
+            quickModal.querySelector('div').classList.remove('scale-95');
+            quickModal.querySelector('div').classList.add('scale-100');
+
+            // Automatic dismissal if left untouched on screen
+            resumeTimeout = setTimeout(() => {
+                closeQuickModal();
+            }, 10000);
+        }
+
+        function closeQuickModal() {
+            quickModal.classList.add('opacity-0', 'pointer-events-none');
+            quickModal.querySelector('div').classList.remove('scale-100');
+            quickModal.querySelector('div').classList.add('scale-95');
+            // Re-ignite layout loops
+            startAutoCycle();
+        }
+
+        // Initialize execution on load
+        window.onload = () => {
+            startAutoCycle();
+        };
     </script>
 </body>
 </html>
