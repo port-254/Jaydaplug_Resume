@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankara Resorts Smart TV Menu</title>
-    <!-- Tailwind CSS v4 -->
+    <title>Ankara Resorts Smart TV Display System</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght=0,200..800;1,200..800&display=swap');
         
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -16,154 +15,153 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Smooth, ultra-crisp CSS scaling for 75" TV hardware */
-        @media (min-width: 1920px) {
-            html { font-size: 22px; }
-        }
-        @media (min-width: 3840px) {
-            html { font-size: 42px; }
-        }
+        /* Ultra-crisp scaling optimization for large format 75" UHD displays */
+        @media (min-width: 1920px) { html { font-size: 22px; } }
+        @media (min-width: 3840px) { html { font-size: 42px; } }
 
-        /* Custom Keyframes for interactive elements */
-        @keyframes pulse-glow {
-            0%, 100% { transform: scale(1); opacity: 0.9; box-shadow: 0 0 0px rgba(201, 125, 76, 0); }
-            50% { transform: scale(1.02); opacity: 1; box-shadow: 0 0 20px rgba(201, 125, 76, 0.4); }
-        }
-        .event-glow {
-            animation: pulse-glow 3s infinite ease-in-out;
+        /* Smooth hardware-accelerated animations for active page states */
+        .page-transition {
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body class="bg-[#130b08] text-[#f4eae1] h-screen w-screen overflow-hidden flex flex-col antialiased select-none">
+<body class="bg-[#0f0806] text-[#f4eae1] h-screen w-screen overflow-hidden flex flex-col antialiased select-none">
 
-    <!-- Header / Brand Bar -->
-    <header class="bg-[#24150e] border-b-2 border-[#c97d4c] px-8 py-4 flex justify-between items-center shrink-0 shadow-xl z-10">
+    <header class="bg-[#1a0f0a] border-b-2 border-[#c97d4c] px-10 py-5 flex justify-between items-center shrink-0 shadow-2xl z-20">
         <div>
-            <h1 class="font-serif-menu text-4xl font-bold tracking-wide text-white flex items-center gap-3">
-                Ankara Resorts 
-                <span class="text-xs font-sans font-black tracking-widest bg-red-600 text-white px-2 py-0.5 rounded animate-pulse">LIVE SCREEN</span>
+            <h1 class="font-serif-menu text-4xl font-extrabold tracking-wide text-white flex items-center gap-3">
+                Ankara Resorts
             </h1>
-            <p class="font-serif-menu italic text-sm text-[#c97d4c] tracking-wider uppercase">Gourmet Experience</p>
+            <p class="font-serif-menu italic text-sm text-[#c97d4c] tracking-widest uppercase mt-0.5">Premium Lounge & Kitchen</p>
         </div>
         
-        <!-- Live View Toggle Banner -->
-        <div id="view-status" class="text-xs font-bold tracking-widest text-[#f4eae1] bg-[#3a2216] px-5 py-2 rounded-lg border border-[#523221] transition-all duration-500">
-            Auto-Cycling Menu (15s)
+        <div class="flex items-center gap-4">
+            <div class="bg-[#2a1810] px-5 py-2.5 rounded-xl border border-[#44281b] text-right">
+                <span class="text-[10px] uppercase block tracking-wider text-gray-400 font-bold">How to Order</span>
+                <span class="text-sm font-black text-white">Kindly Note Your Table Number & Call a Host</span>
+            </div>
         </div>
     </header>
 
-    <!-- MAIN INTERACTIVE HUB -->
     <main class="flex-1 relative min-h-0 w-full overflow-hidden">
         
-        <!-- ================= PAGE 1: THE FULL MENU ================= -->
-        <div id="page-menu" class="absolute inset-0 grid grid-cols-12 gap-5 p-5 transition-all duration-1000 transform opacity-100 scale-100 z-10">
+        <div id="view-menu" class="page-transition absolute inset-0 grid grid-cols-12 gap-5 p-6 opacity-100 scale-100 z-10">
             
-            <!-- COL 1: Platters & Bitings -->
             <div class="col-span-3 flex flex-col gap-4 min-h-0">
-                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] flex-1 flex flex-col min-h-0 shadow-lg">
-                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-3">Shareable Platters</h2>
-                    <div class="flex-1 grid grid-cols-2 gap-2.5 content-center">
-                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 2 & 4', 'Perfect for date nights or pairs sharing. Featuring selection of Kuku Choma, Pork, and traditional sides cut down right to precision.')">
-                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
-                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">2 / 4</span>
+                <div class="bg-[#160d09] p-5 rounded-2xl border border-[#2d1a12] flex-1 flex flex-col min-h-0 shadow-lg">
+                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-3">
+                        Shareable Platters
+                    </h2>
+                    <div class="flex-1 grid grid-cols-1 gap-2 content-center text-xs">
+                        <div class="bg-[#1f120c] p-2.5 rounded-xl border border-[#362015] flex justify-between items-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showItemDetail('Platter for 2', 'A perfectly balanced pair arrangement. Contains portions of Kuku Choma, Pork Dry Fry, served alongside soft Chapatis and crisp kachumbari.')">
+                            <span class="font-bold text-white">Platter for 2</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-[#2d1a12] text-gray-400">Perfect Pair</span>
                         </div>
-                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 6 & 8', 'Family sized combo containing mixed options of Goat Choma, Pork Ribs, Samosas, and fluffy Chapatis.')">
-                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
-                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">6 / 8</span>
+                        <div class="bg-[#1f120c] p-2.5 rounded-xl border border-[#362015] flex justify-between items-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showItemDetail('Platter for 4', 'Designed for close friends or small families. Features prime cuts of Goat Choma, deep-fried Pork, Samosas, and sides.')">
+                            <span class="font-bold text-white">Platter for 4</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-[#2d1a12] text-gray-400">Family Size</span>
                         </div>
-                        <div class="bg-[#24150e] p-3 rounded-lg border border-[#3e2519] text-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showQuickModal('Platters for 10 & 12', 'The Crew Ultimate option. Prepped by top chefs containing optimal cuts of all our signature specialty wet and dry meats.')">
-                            <span class="block text-[11px] uppercase tracking-wider text-gray-400">Platter for</span>
-                            <span class="block font-serif-menu text-2xl font-black text-[#c97d4c]">10 / 12</span>
+                        <div class="bg-[#1f120c] p-2.5 rounded-xl border border-[#362015] flex justify-between items-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showItemDetail('Platter for 6 & 8', 'The ultimate mid-sized gatherer layout. Loaded heavily with Pork Ribs, Glazed Pork, Grilled Sausages, and multiple Chapatis.')">
+                            <span class="font-bold text-white">Platter for 6 / 8</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-[#2d1a12] text-gray-400">The Crew Setup</span>
                         </div>
-                        <div class="bg-[#c97d4c]/10 p-3 rounded-lg border-2 border-[#c97d4c] text-center hover:bg-[#c97d4c]/20 cursor-pointer transition col-span-2" onclick="showQuickModal('The Grand Platter for 20', 'Massive resort celebration arrangement! Includes custom selections of Kuku, Mbuzi Choma, Pork Ribs, Chapatis, Kebabs, and Sausages served across custom board layout.')">
-                            <span class="block text-xs uppercase tracking-widest text-[#c97d4c] font-black">Grand Feast for</span>
-                            <span class="block font-serif-menu text-3xl font-black text-white">20 People</span>
+                        <div class="bg-[#1f120c] p-2.5 rounded-xl border border-[#362015] flex justify-between items-center hover:border-[#c97d4c] cursor-pointer transition" onclick="showItemDetail('Platter for 10 & 12', 'Heavy celebratory layout featuring combinations of slow-cooked wet fries and classic local open-grill cuts across the board.')">
+                            <span class="font-bold text-white">Platter for 10 / 12</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-[#2d1a12] text-gray-400">Celebration Size</span>
+                        </div>
+                        <div class="bg-[#c97d4c]/10 p-3 rounded-xl border-2 border-[#c97d4c] text-center hover:bg-[#c97d4c]/20 cursor-pointer transition mt-2" onclick="showItemDetail('The Grand Platter for 20', 'Our premium resort special. Masterfully put together by the Head Chef, featuring a grand selection of Kuku Choma, Mbuzi Choma, Pork Ribs, Glazed Cuts, Golden Samosas, Layered Chapatis, Grilled Sausages, and Skewered Kebabs.')">
+                            <span class="block text-[10px] font-black tracking-widest text-[#c97d4c] uppercase">The Ultimate Feast</span>
+                            <span class="block font-serif-menu text-xl font-black text-white mt-0.5">Platter for 20 People</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] shrink-0 shadow-lg">
-                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-3">Bitings & Sides</h2>
-                    <div class="grid grid-cols-2 gap-2 text-center text-sm font-semibold">
-                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Samosas', 'Golden, ultra-crispy handcrafted pastry triangles packed with spiced signature minced meat fill.')">Samosa</div>
-                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Chapati', 'Classic soft, layered, flaky East African flatbread rolled out dynamically all day.')">Chapati</div>
-                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Choma Sausage', 'Local style char-grilled giant sausages with a perfect signature outer snap.')">Choma Sausage</div>
-                        <div class="p-2.5 bg-[#24150e] rounded-lg border border-[#3e2519] hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Kebab', 'Perfectly seasoned spiced minced meat logs, skewered and shallow-fried to perfection.')">Kebab</div>
+                <div class="bg-[#160d09] p-4 rounded-2xl border border-[#2d1a12] shrink-0 shadow-lg">
+                    <h2 class="font-serif-menu text-lg font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-1.5 mb-2.5">Sides & Quick Bites</h2>
+                    <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+                        <div class="p-2.5 bg-[#1f120c] rounded-lg border border-[#2d1a12] hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Samosas', 'Crispy, deep-fried golden pastry pockets packed tightly with home-spiced minced meat filling.')">Samosa</div>
+                        <div class="p-2.5 bg-[#1f120c] rounded-lg border border-[#2d1a12] hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Chapati', 'Hand-rolled, soft-layered traditional flatbread prepared fresh on flat-top grills throughout the day.')">Chapati</div>
+                        <div class="p-2.5 bg-[#1f120c] rounded-lg border border-[#2d1a12] hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Choma Sausage', 'Jumbo sausages slow-charred over hot charcoal to maximize a crispy, snappy bite.')">Choma Sausage</div>
+                        <div class="p-2.5 bg-[#1f120c] rounded-lg border border-[#2d1a12] hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Kebab', 'Perfectly molded seasoned minced meat blocks, shallow-fried with subtle spices and light herbs.')">Kebab</div>
                     </div>
                 </div>
             </div>
 
-            <!-- COL 2: Poultry, Beef & Goat Mains -->
-            <div class="col-span-5 bg-[#1c100a] p-5 rounded-xl border border-[#362015] flex flex-col min-h-0 shadow-lg">
-                <h2 class="font-serif-menu text-2xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-4 flex justify-between items-center">
-                    <span>Main Kitchen Selections</span>
-                    <span class="text-xs font-sans tracking-widest text-gray-400 bg-[#24150e] px-3 py-1 rounded-full uppercase">Choma & Fry</span>
+            <div class="col-span-5 bg-[#160d09] p-5 rounded-2xl border border-[#2d1a12] flex flex-col min-h-0 shadow-lg">
+                <h2 class="font-serif-menu text-2xl font-bold text-[#c97d4c] border-b border-dashed border-[#2d1a12] pb-2 mb-4 flex justify-between items-center">
+                    <span>Main Kitchen Cuts</span>
+                    <span class="text-[10px] font-sans font-black tracking-wider text-gray-400 bg-[#1f120c] px-3 py-1 rounded-full uppercase">Authentic Grills</span>
                 </h2>
+                
                 <div class="flex-1 flex flex-col justify-between min-h-0 gap-y-4">
                     <div>
-                        <h3 class="text-xs font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#24150e] px-2 py-1 inline-block rounded">Poultry (Kuku)</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Choma', 'Local kuku open-flame charcoal roasted for absolute smoky flavor profiles.')"><span class="font-bold text-white text-base">Kuku Choma</span><span class="text-xs text-[#c97d4c] italic">Flame Charred</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Wet Fry', 'Juicy cuts stewed deeply in rich local tomatoes, bell peppers, and home style spices.')"><span class="font-bold text-white text-base">Kuku Wet Fry</span><span class="text-xs text-[#c97d4c] italic">Rich Savory Gravy</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Kuku Dry Fry', 'High-heat pan seared chicken tossed cleanly with sweet red onions and coriander.')"><span class="font-bold text-white text-base">Kuku Dry Fry</span><span class="text-xs text-[#c97d4c] italic">Caramelized Crunch</span></div>
+                        <h3 class="text-[10px] font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#1f120c] px-2 py-1 inline-block rounded">Poultry (Kuku)</h3>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Kuku Choma', 'Local free-range chicken roasted slow over hot charcoal blocks for a pure traditional smoky finish.')"><span class="font-bold text-white text-sm">Kuku Choma</span><span class="text-xs text-[#c97d4c] italic">Flame Charcoal Grilled</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Kuku Wet Fry', 'Tender chicken pieces simmered down slowly inside a thick, heavily spiced tomato-onion reduction broth.')"><span class="font-bold text-white text-sm">Kuku Wet Fry</span><span class="text-xs text-gray-400">Rich Savory Thick Sauce</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Kuku Dry Fry', 'High-heat pan-seared chicken cuts tossed with lots of red onions, crisp bell peppers, and fresh coriander leaves.')"><span class="font-bold text-white text-sm">Kuku Dry Fry</span><span class="text-xs text-gray-400">Caramelized Onions</span></div>
                         </div>
                     </div>
+
                     <div>
-                        <h3 class="text-xs font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#24150e] px-2 py-1 inline-block rounded">Beef & Mbuzi (Goat)</h3>
-                        <div class="grid grid-cols-1 gap-2">
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Beef Wet / Dry', 'Premium beef chuck chunks customized straight into heavy local glaze sauce or dry wok tossed.')"><span class="font-bold text-white text-base">Beef (Wet / Dry Fry)</span><span class="text-xs text-gray-400">Chef Special</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Choma', 'Authentic choice cuts of local goat slow-roasted over real charcoal wood beds.')"><span class="font-bold text-white text-base">Goat Choma (Mbuzi)</span><span class="text-xs text-[#c97d4c] italic">Traditional Best</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Wet Fry', 'Rich goat ribs or shoulder chunks pan simmered cleanly inside sweet onion thick soup.')"><span class="font-bold text-white text-base">Goat Wet Fry</span><span class="text-xs text-gray-400">Tender Gravy</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Dry Fry', 'Wok-charred goat pieces infused with local ginger, garlic, and heavy bullet chilis.')"><span class="font-bold text-white text-base">Goat Dry Fry</span><span class="text-xs text-gray-400">Spicy Kick Available</span></div>
-                            <div class="flex justify-between items-center p-2 bg-[#130b08]/50 rounded border border-transparent hover:border-[#3e2519] cursor-pointer" onclick="showQuickModal('Goat Chops', 'Tender lion chops hit high on flat top grills to seal up pure premium flavor juices.')"><span class="font-bold text-white text-base">Goat Chops</span><span class="text-xs text-gray-400">Searing Grilled</span></div>
+                        <h3 class="text-[10px] font-black uppercase tracking-widest text-[#d9c4b3] mb-2 bg-[#1f120c] px-2 py-1 inline-block rounded">Beef & Mbuzi (Goat)</h3>
+                        <div class="grid grid-cols-1 gap-1.5">
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Beef Wet / Dry Fry', 'Choice local beef cubed fine and customized directly into either signature rich local gravy or tossed dry with spices.')"><span class="font-bold text-white text-sm">Beef (Wet / Dry Fry)</span><span class="text-xs text-gray-400">Steak Cubes</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Goat Choma', 'Traditional prime local goat cuts roasted patient and slow over direct wood fire for signature melt-in-mouth texture.')"><span class="font-bold text-white text-sm">Goat Choma (Mbuzi)</span><span class="text-xs text-[#c97d4c] italic">Resort Signature</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Goat Wet Fry', 'Juicy chunks of choice mbuzi pan-simmered alongside sweet red onions and local garden tomatoes.')"><span class="font-bold text-white text-sm">Goat Wet Fry</span><span class="text-xs text-gray-400">Tender Reduction</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Goat Dry Fry', 'Wok-charred goat pieces fast-tossed with fresh ginger root, garlic cloves, and chopped green chilies.')"><span class="font-bold text-white text-sm">Goat Dry Fry</span><span class="text-xs text-gray-400">Aromatic & Intensely Fired</span></div>
+                            <div class="flex justify-between items-center p-2 bg-[#0f0806]/60 rounded-lg border border-transparent hover:border-[#362015] cursor-pointer" onclick="showItemDetail('Goat Chops', 'Thick loin chops heavily rubbed with simple sea salt and black pepper, seared fast to keep juices fully locked inside.')"><span class="font-bold text-white text-sm">Goat Chops</span><span class="text-xs text-gray-400">Char-Grilled Loin</span></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- COL 3: Pork Specialties & Liquids -->
             <div class="col-span-4 flex flex-col gap-4 min-h-0">
-                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] shrink-0 shadow-lg">
-                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-2">Pork Specialties</h2>
-                    <div class="grid grid-cols-2 gap-2 text-sm">
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Choma', 'Smoky flame-licked pork pieces chopped thin.')">Pork Choma</div>
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Wet Fry', 'Simmered in local rich sauce layout.')">Pork Wet Fry</div>
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Dry Fry', 'Crisp fried on heavy onions and peppers.')">Pork Dry Fry</div>
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Chops', 'Tender grilled center loin pork steaks.')">Pork Chops</div>
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Glazed Pork', 'Sticky-sweet honey barbecue soy house reduction.')">Glazed Pork</div>
-                        <div class="p-2 bg-[#24150e] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showQuickModal('Pork Ribs', 'Fall-off-bone style spare ribs marinated deep.')">Pork Ribs</div>
+                <div class="bg-[#160d09] p-4 rounded-2xl border border-[#2d1a12] shrink-0 shadow-lg">
+                    <h2 class="font-serif-menu text-lg font-bold text-[#c97d4c] border-b border-dashed border-[#2d1a12] pb-1.5 mb-2.5">Pork Specialties</h2>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Pork Choma', 'Smoky, crackling flame-roasted local pork cuts.')">Pork Choma</div>
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Pork Wet Fry', 'Juicy cuts simmered smoothly inside rich thick onion gravy.')">Pork Wet Fry</div>
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Pork Dry Fry', 'Crisp-seared pork pieces tossed with fresh chili options.')">Pork Dry Fry</div>
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Pork Chops', 'Tender center-cut pork loin steaks grilled flat.')">Pork Chops</div>
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Glazed Pork', 'Sticky barbecue honey-soy reduction glaze finish.')">Glazed Pork</div>
+                        <div class="p-2 bg-[#1f120c] rounded border border-transparent hover:border-[#c97d4c] cursor-pointer" onclick="showItemDetail('Pork Ribs', 'Fall-off-the-bone tender spare ribs marinated long.')">Pork Ribs</div>
                     </div>
                 </div>
 
-                <div class="bg-[#1c100a] p-4 rounded-xl border border-[#362015] flex-1 flex flex-col min-h-0 shadow-lg">
-                    <h2 class="font-serif-menu text-xl font-bold text-[#c97d4c] border-b border-dashed border-[#362015] pb-2 mb-2">Bar & Refreshments</h2>
-                    <div class="flex-1 flex flex-col justify-between text-xs gap-y-2">
+                <div class="bg-[#160d09] p-4 rounded-2xl border border-[#2d1a12] flex-1 flex flex-col min-h-0 shadow-lg relative overflow-hidden">
+                    <div class="flex justify-between items-start border-b border-dashed border-[#2d1a12] pb-2 mb-3 shrink-0">
                         <div>
-                            <span class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Thick Milkshakes</span>
-                            <div class="grid grid-cols-4 gap-1 text-center font-bold">
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Vanilla</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Strawb'y</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Choc</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Blueb'y</span>
-                            </div>
+                            <h2 class="font-serif-menu text-lg font-bold text-[#c97d4c]">Refreshments & Bar</h2>
+                            <p class="text-[9px] text-gray-400 font-bold uppercase tracking-wider">Perfect Pairing For Your Meat</p>
                         </div>
-                        <div>
-                            <span class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Blended Juices</span>
-                            <div class="grid grid-cols-4 gap-1 text-center font-bold">
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Pineapple</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Mango</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Orange</span>
-                                <span class="bg-[#24150e] py-1.5 rounded border border-[#3e2519]">Melon</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#362015]">
+                        <span class="text-xs bg-[#c97d4c]/20 text-[#c97d4c] font-black px-2 py-0.5 rounded">Fresh</span>
+                    </div>
+
+                    <div class="flex-1 grid grid-cols-12 gap-3 min-h-0">
+                        <div class="col-span-7 flex flex-col justify-between text-[11px] space-y-2">
                             <div>
-                                <span class="text-[10px] font-bold text-gray-400 uppercase block">Smoothie</span>
-                                <span class="font-bold text-white text-sm">Avocado Smoothie</span>
+                                <span class="text-[9px] font-black tracking-wider text-gray-400 uppercase block mb-1">Thick Milkshakes</span>
+                                <p class="text-white font-medium">Vanilla, Strawberry, Chocolate, Blueberry</p>
                             </div>
                             <div>
-                                <span class="text-[10px] font-bold text-gray-400 uppercase block">Cocktails</span>
-                                <span class="font-bold text-white text-sm">Signature Mixes</span>
+                                <span class="text-[9px] font-black tracking-wider text-gray-400 uppercase block mb-1">Blended Juices</span>
+                                <p class="text-white font-medium">Pineapple, Mango, Orange, Melon</p>
+                            </div>
+                            <div class="pt-2 border-t border-[#2d1a12]">
+                                <span class="text-[9px] font-black tracking-wider text-gray-400 uppercase block">Thick Smoothie</span>
+                                <p class="text-white font-bold text-xs">Pure Avocado Smoothie</p>
+                            </div>
+                            <div>
+                                <span class="text-[9px] font-black tracking-wider text-red-400 uppercase block">Mixology</span>
+                                <p class="text-white font-bold text-xs">Signature Crafted Cocktails</p>
+                            </div>
+                        </div>
+
+                        <div class="col-span-5 rounded-xl overflow-hidden bg-[#0f0806] border border-[#2d1a12] relative group">
+                            <img src="Ct.png" alt="Signature Cocktails" class="w-full h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex items-end p-2">
+                                <span class="text-[9px] font-bold text-white tracking-wide uppercase drop-shadow">Fresh Mixes</span>
                             </div>
                         </div>
                     </div>
@@ -171,164 +169,170 @@
             </div>
         </div>
 
-        <!-- ================= PAGE 2: DJ LYTA GIG EVENT FEATURE ================= -->
-        <div id="page-event" class="absolute inset-0 p-8 flex hidden justify-center items-center transition-all duration-1000 transform opacity-0 scale-95 z-10">
-            <div class="bg-[#200c05] w-full h-full rounded-2xl border-4 border-red-600 flex overflow-hidden shadow-2xl relative event-glow">
+        <div id="view-event" class="page-transition absolute inset-0 p-6 flex hidden justify-center items-center opacity-0 scale-95 z-10">
+            <div class="bg-[#1b0803] w-full h-full rounded-3xl border-4 border-[#c97d4c] flex overflow-hidden shadow-2xl relative">
                 
-                <!-- Left Banner Graphic Style -->
-                <div class="w-1/2 bg-gradient-to-br from-red-700 via-orange-800 to-[#130b08] p-12 flex flex-col justify-between relative">
-                    <div class="absolute top-4 left-4 bg-black text-red-500 font-mono font-black text-xs px-3 py-1 uppercase tracking-widest rounded">
-                        Tomorrow Night
+                <div class="w-1/2 relative bg-[#0f0502] overflow-hidden flex items-center justify-center border-r-2 border-[#3c190d]">
+                    <img src="Lyta.png" alt="DJ Lyta Live" class="w-full h-full object-cover opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#1b0803]/40 to-[#1b0803]"></div>
+                    <div class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-sm border border-[#c97d4c] p-4 rounded-xl">
+                        <span class="text-[10px] uppercase font-black text-[#c97d4c] tracking-widest block">Live Act</span>
+                        <h4 class="font-serif-menu text-3xl font-black text-white">TONIGHT</h4>
                     </div>
+                </div>
+
+                <div class="w-1/2 p-12 flex flex-col justify-between bg-gradient-to-br from-[#1b0803] to-[#0f0502]">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-black tracking-widest bg-yellow-400 text-black px-4 py-1.5 rounded-full uppercase">Ankara Resorts Live Event</span>
+                        <span class="text-sm font-bold text-red-500 font-mono tracking-wider animate-pulse">● HAPPENING TODAY</span>
+                    </div>
+
                     <div class="space-y-4 my-auto">
-                        <span class="text-[#f4eae1] font-bold text-xl tracking-widest uppercase block">Ankara Resorts Presents</span>
-                        <h2 class="font-serif-menu text-7xl font-black text-white leading-none tracking-tight">PARK &<br><span class="text-yellow-400">CHILL</span></h2>
-                        <div class="h-2 w-24 bg-red-600 rounded"></div>
-                        <p class="text-xl text-gray-200 font-medium">Experience the absolute peak of local nightlife fusion. Ultimate audio system setups paired perfectly with Ankara premium biting platters.</p>
+                        <h2 class="font-serif-menu text-7xl font-black text-white leading-none tracking-tight">
+                            PARK & <br><span class="text-yellow-400">CHILL</span>
+                        </h2>
+                        <div class="h-1.5 w-20 bg-[#c97d4c] rounded"></div>
+                        <p class="text-lg text-gray-200 leading-relaxed font-medium">
+                            Experience the country’s top entertainment blueprint. Massive car park vibe conversion paired perfectly with flame-grilled mbuzi cuts, deep bass lines, and excellent service.
+                        </p>
+                        
+                        <div class="p-4 bg-[#2f1107] rounded-xl border border-red-900/40">
+                            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wide block">Entertainment Headliner:</span>
+                            <span class="font-serif-menu text-4xl font-extrabold text-white tracking-wide block mt-1">DJ LYTA</span>
+                        </div>
                     </div>
-                    <div class="text-sm font-bold text-gray-400 uppercase tracking-widest">
-                        Gates open 2:00 PM Till Late
+
+                    <div class="flex justify-between items-center text-xs font-bold text-gray-400 uppercase tracking-widest pt-4 border-t border-[#31140b]">
+                        <span>Gates Open at 2:00 PM</span>
+                        <span class="text-white bg-[#36160d] px-3 py-1 rounded border border-[#502214]">No Entry Cover Charges</span>
                     </div>
                 </div>
 
-                <!-- Right Side Artist Profile Information -->
-                <div class="w-1/2 bg-[#170904] p-12 flex flex-col justify-between border-l-2 border-red-900/40">
-                    <div class="text-right">
-                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Headlining Act</span>
-                    </div>
-                    <div class="my-auto text-center space-y-6">
-                        <span class="text-xs font-black bg-yellow-400 text-black px-4 py-1.5 rounded-full uppercase tracking-widest inline-block">The Mixmaster Mastermind</span>
-                        <h3 class="font-serif-menu text-8xl font-black tracking-wide text-white drop-shadow-md">DJ LYTA</h3>
-                        <p class="text-lg text-red-400 font-bold max-w-md mx-auto">Dropping the hottest street riddims, afrobeat throwbacks, and exclusive dancehall mixes live from the deck console.</p>
-                    </div>
-                    <div class="bg-[#241109] p-4 rounded-xl border border-red-900/30 text-center">
-                        <span class="text-xs block text-gray-400 uppercase tracking-wider">Special Offer Running</span>
-                        <p class="text-base font-bold text-white">Order Any Platter for 4+ Get Complementary Choma Sausages!</p>
-                    </div>
-                </div>
+            </div>
+        </div>
 
+        <div id="view-video" class="page-transition absolute inset-0 flex hidden justify-center items-center opacity-0 scale-95 z-10 bg-black">
+            <div class="w-full h-full relative">
+                <video id="resort-loop-video" class="w-full h-full object-cover" muted playsinline>
+                    <source src="ed.mov" type="video/mp4">
+                    Your display hardware does not support integrated video layers.
+                </video>
+                <div class="absolute bottom-8 right-8 bg-black/60 backdrop-blur-md px-6 py-3 rounded-2xl border border-[#c97d4c]/40 text-right">
+                    <span class="text-[10px] font-black text-[#c97d4c] tracking-widest uppercase block">Lounge Ambience</span>
+                    <h3 class="font-serif-menu text-2xl font-bold text-white">Ankara Resorts Experience</h3>
+                </div>
             </div>
         </div>
 
     </main>
 
-    <!-- LIVE MARQUEE FOOTER BAR -->
-    <footer class="bg-[#1a0f0a] border-t border-[#311c12] shrink-0 h-14 flex items-center overflow-hidden z-20 relative">
-        <!-- Static Label Fixed to Left Side -->
-        <div class="bg-red-600 text-white font-black text-xs px-6 h-full flex items-center uppercase tracking-widest shadow-lg z-30 shrink-0">
-            HAPPENING TOMORROW
+    <footer class="bg-[#150a06] border-t border-[#29140c] shrink-0 h-16 flex items-center overflow-hidden z-20 relative">
+        <div class="bg-[#c97d4c] text-black font-black text-xs px-8 h-full flex items-center uppercase tracking-widest shadow-xl z-30 shrink-0">
+            Resort Updates
         </div>
-        <!-- Infinite Scrolling CSS Marquee Wrapper -->
-        <div class="flex-1 overflow-hidden relative flex items-center bg-[#130b08]">
-            <marquee class="font-serif-menu text-lg md:text-xl text-[#f4eae1] font-bold" scrollamount="7" behavior="scroll" direction="left">
-                🔥 PARK & CHILL EVENT TOMORROW LIVE AT ANKARA RESORTS! 🎧 HEADLINING MIXES BY THE LEGENDARY <span class="text-yellow-400 font-black underline">DJ LYTA</span> 🍖 DRINK PROMOTIONS, PLENTY OF MBUZI CHOMA, EXOTIC COCKTAILS, AND PLATTERS READY FOR INDOOR & OUTDOOR PARKING CHILL VIBES! BRING THE CREW OUT EARLY! 🔥
+        <div class="flex-1 overflow-hidden relative flex items-center bg-[#0f0806]">
+            <marquee class="font-serif-menu text-lg text-[#f4eae1] font-bold" scrollamount="6" behavior="scroll" direction="left">
+                🌟 HAPPENING TODAY IN THE BUILDING: THE BIGGEST HIGHWAY EXPERIENCE — PARK & CHILL EVENT HOSTED LIVE BY THE INFAMOUS <span class="text-yellow-400 font-black">DJ LYTA</span>! 🎧 TRUCK DECKS OUTDOORS, FULL KITCHEN RUNNING KUKU CHOMA, CRISPY PORK RIBS, SECURED EXTENSIVE CAR PARKING BAYS AND SIGNATURE COCKTAILS ALL NIGHT. BRING THE SQUAD! 🌟
             </marquee>
         </div>
     </footer>
 
-    <!-- DYNAMIC SMART DISPLAY POPUP MODAL -->
-    <div id="quick-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
-        <div class="bg-[#281710] border-2 border-[#c97d4c] w-[600px] p-8 rounded-2xl shadow-2xl transform scale-95 transition-all duration-300 relative">
-            <button onclick="closeQuickModal()" class="absolute top-4 right-4 bg-[#1a0f0a] border border-[#44281b] w-10 h-10 rounded-full flex items-center justify-center font-bold text-[#c97d4c] hover:text-white transition">✕</button>
-            <span class="text-[10px] uppercase tracking-widest text-[#c97d4c] font-bold block mb-1">Ankara Resort Item Detail</span>
-            <h3 id="modal-title" class="font-serif-menu text-3xl font-bold text-white mb-4">Item Name</h3>
-            <p id="modal-desc" class="text-gray-300 text-base leading-relaxed mb-6">Detailed text regarding flavor metrics or ingredient profiles.</p>
-            <div class="bg-[#1a0f0a] p-3 rounded-lg text-xs text-center font-mono text-gray-400 border border-[#3e2519]">
-                Interactive Smart TV Menu Feature • Auto-resumes in 10s
+    <div id="info-modal" class="fixed inset-0 bg-black/85 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
+        <div class="bg-[#1f110b] border-2 border-[#c97d4c] w-[650px] p-8 rounded-3xl shadow-2xl transform scale-95 transition-all duration-300 relative">
+            <button onclick="closeItemDetail()" class="absolute top-5 right-5 bg-[#140b07] border border-[#3c2115] w-10 h-10 rounded-full flex items-center justify-center font-bold text-[#c97d4c] hover:text-white transition">✕</button>
+            <span class="text-[9px] uppercase tracking-widest text-[#c97d4c] font-black block mb-1">Ankara Kitchen Standards</span>
+            <h3 id="modal-item-title" class="font-serif-menu text-3xl font-bold text-white mb-3">Item Nomenclature</h3>
+            <p id="modal-item-desc" class="text-gray-300 text-sm leading-relaxed mb-6">Detailed text descriptions.</p>
+            <div class="bg-[#0f0806] p-4 rounded-xl text-xs text-center font-medium text-gray-400 border border-[#2d1a12]">
+                Order taking requires clear item naming. Mention style to your host helper.
             </div>
         </div>
     </div>
 
-    <!-- AUTO-CYCLE AND LOGIC CONTROLLER SCRIPT -->
     <script>
-        const pageMenu = document.getElementById('page-menu');
-        const pageEvent = document.getElementById('page-event');
-        const viewStatus = document.getElementById('view-status');
-        const quickModal = document.getElementById('quick-modal');
-        
-        let currentScreen = 'menu'; // menu | event
+        // Array holding available background layout sequences
+        const views = ['menu', 'event', 'video'];
+        let viewIndex = 0;
         let cycleInterval;
-        let resumeTimeout;
+        let interactiveTimeout;
 
-        // Function to run smooth transitions between pages
-        function switchScreen(target) {
-            if (target === 'event') {
-                // Fade out Menu
-                pageMenu.classList.remove('opacity-100', 'scale-100');
-                pageMenu.classList.add('opacity-0', 'scale-95');
-                setTimeout(() => {
-                    pageMenu.classList.add('hidden');
-                    pageEvent.classList.remove('hidden');
-                    // Fade in Event Showcase
-                    setTimeout(() => {
-                        pageEvent.classList.remove('opacity-0', 'scale-95');
-                        pageEvent.classList.add('opacity-100', 'scale-100');
-                        currentScreen = 'event';
-                        viewStatus.innerText = "Showing Event Special";
-                        viewStatus.className = "text-xs font-bold tracking-widest text-white bg-red-800 px-5 py-2 rounded-lg border border-red-600 animate-pulse";
-                    }, 50);
-                }, 1000);
+        const viewElements = {
+            menu: document.getElementById('view-menu'),
+            event: document.getElementById('view-event'),
+            video: document.getElementById('view-video')
+        };
+        const videoElement = document.getElementById('resort-loop-video');
+        const infoModal = document.getElementById('info-modal');
+
+        // Master UI Transition Framework
+        function displayNextSequence(targetView) {
+            // Hide all current active views smoothly
+            Object.keys(viewElements).forEach(key => {
+                viewElements[key].classList.remove('opacity-100', 'scale-100');
+                viewElements[key].classList.add('opacity-0', 'scale-95');
+                setTimeout(() => viewElements[key].classList.add('hidden'), 1100);
+            });
+
+            // Handle integrated background video playback logic safely
+            if (targetView === 'video') {
+                try {
+                    videoElement.currentTime = 0;
+                    videoElement.play().catch(e => console.log("Video autoplay caught: System required click gesture initialization."));
+                } catch(e){}
             } else {
-                // Fade out Event Showcase
-                pageEvent.classList.remove('opacity-100', 'scale-100');
-                pageEvent.classList.add('opacity-0', 'scale-95');
-                setTimeout(() => {
-                    pageEvent.classList.add('hidden');
-                    pageMenu.classList.remove('hidden');
-                    // Fade in Full Menu
-                    setTimeout(() => {
-                        pageMenu.classList.remove('opacity-0', 'scale-95');
-                        pageMenu.classList.add('opacity-100', 'scale-100');
-                        currentScreen = 'menu';
-                        viewStatus.innerText = "Auto-Cycling Menu (15s)";
-                        viewStatus.className = "text-xs font-bold tracking-widest text-[#f4eae1] bg-[#3a2216] px-5 py-2 rounded-lg border border-[#523221]";
-                    }, 50);
-                }, 1000);
+                try { videoElement.pause(); } catch(e){}
             }
+
+            // Expose new target layout screen view
+            setTimeout(() => {
+                viewElements[targetView].classList.remove('hidden');
+                setTimeout(() => {
+                    viewElements[targetView].classList.remove('opacity-0', 'scale-95');
+                    viewElements[targetView].classList.add('opacity-100', 'scale-100');
+                }, 50);
+            }, 1150);
         }
 
-        // Trigger automatic 15 seconds screen loops
-        function startAutoCycle() {
+        // Automatic Background Thread Manager (15-second cycles)
+        function initiateSystemLoop() {
             clearInterval(cycleInterval);
             cycleInterval = setInterval(() => {
-                if (currentScreen === 'menu') {
-                    switchScreen('event');
-                } else {
-                    switchScreen('menu');
-                }
-            }, 15000); // 15 Seconds Time Trigger
+                viewIndex = (viewIndex + 1) % views.length;
+                displayNextSequence(views[viewIndex]);
+            }, 15000); 
         }
 
-        // Display pop up descriptions instantly on click
-        function showQuickModal(title, description) {
-            clearInterval(cycleInterval); // Halt background movement while user looks
-            clearTimeout(resumeTimeout);
+        // Waiter & Customer Interaction Portal Click handler
+        function showItemDetail(title, detailedText) {
+            // Halt automatic background page flipping while client interacts
+            clearInterval(cycleInterval);
+            clearTimeout(interactiveTimeout);
 
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('modal-item-title').innerText = title;
+            document.getElementById('modal-item-desc').innerText = detailedText;
             
-            // Render Animations classes
-            quickModal.classList.remove('opacity-0', 'pointer-events-none');
-            quickModal.querySelector('div').classList.remove('scale-95');
-            quickModal.querySelector('div').classList.add('scale-100');
+            infoModal.classList.remove('opacity-0', 'pointer-events-none');
+            infoModal.querySelector('div').classList.remove('scale-95');
+            infoModal.querySelector('div').classList.add('scale-100');
 
-            // Automatic dismissal if left untouched on screen
-            resumeTimeout = setTimeout(() => {
-                closeQuickModal();
-            }, 10000);
+            // Automatically dismiss modal and resume loop after 12 seconds of inactivity
+            interactiveTimeout = setTimeout(() => {
+                closeItemDetail();
+            }, 12000);
         }
 
-        function closeQuickModal() {
-            quickModal.classList.add('opacity-0', 'pointer-events-none');
-            quickModal.querySelector('div').classList.remove('scale-100');
-            quickModal.querySelector('div').classList.add('scale-95');
-            // Re-ignite layout loops
-            startAutoCycle();
+        function closeItemDetail() {
+            infoModal.classList.add('opacity-0', 'pointer-events-none');
+            infoModal.querySelector('div').classList.remove('scale-100');
+            infoModal.querySelector('div').classList.add('scale-95');
+            
+            // Re-ignite system interval immediately
+            initiateSystemLoop();
         }
 
-        // Initialize execution on load
+        // Auto-launch workflow execution once hardware renders page layout fully
         window.onload = () => {
-            startAutoCycle();
+            initiateSystemLoop();
         };
     </script>
 </body>
